@@ -44,8 +44,6 @@
 #include <algorithm>
 #include <iomanip>
 
-//using namespace std;
-
 /*
 * Data structure used with example container code 
 */
@@ -72,6 +70,7 @@ bool DataSortDescd(const Data &Data1, const Data &Data2) { return (Data2.d < Dat
 /* function to sort Data using field s*/
 bool DataSorts(const Data &Data1, const Data &Data2) { return (Data1.s < Data2.s); }
 bool DataSortDescs(const Data &Data1, const Data &Data2) { return (Data2.s < Data1.s); }
+
 /*
 ** RandomDataFill - Function to fill in a Data structure with random data.
 **
@@ -96,6 +95,7 @@ void RandomDataFill(Data &Data) {
 	Data.s = Buffer;
 	return;
 }
+
 /*
 ** PrintElement - Function to output to screen the data in a Data structure.
 **
@@ -107,6 +107,7 @@ void RandomDataFill(Data &Data) {
 void PrintElement(Data &Data) {
 	std::cout << "s = " << Data.s << "," << "i = " << Data.i << "," << "d = " << Data.d << std::endl;
 }
+
 /*
 ** PrintData - Function to output to screen the entire list of data.
 **
@@ -122,6 +123,7 @@ void PrintData(std::list<Data> &List) {
 		PrintElement(*it);
 	std::cout << std::endl;
 }
+
 /*
 ** PrintData - Function to output to screen the entire vector of data.
 **
