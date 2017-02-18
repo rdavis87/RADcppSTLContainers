@@ -114,6 +114,7 @@ void TestVectors() {
 	/*
 	* fill in the vector with some random generated data and print it using the array notation method of access.
 	*/
+	std::cout << "Initial vector data" << std::endl;
 	for (i = 0; i < array.size(); i++) 
 		RandomDataFill(array[i]);
 	for (i = 0; i < array.size(); i++)
@@ -121,6 +122,7 @@ void TestVectors() {
 	std::cout << std::endl;
 
 	/* add another element to the array letting vector template handle resizing */
+	std::cout << "element pushed on the back" << std::endl;
 	RandomDataFill(Data);
 	array.push_back(Data);
 	for (i = 0; i < array.size(); i++) // should now print 6 elements
@@ -128,12 +130,14 @@ void TestVectors() {
 	std::cout << std::endl;
 
 	/* remove last element and print again*/
+	std::cout << "last element popped off" << std::endl;
 	array.pop_back();
 	for (i = 0; i < array.size(); i++) // should now print 5 elements again
 		PrintData(array[i]);
 	std::cout << std::endl;
 
 	/* manually increase vector size and add element with array notation */
+	std::cout << "element added to the end using array notation" << std::endl;
 	array.resize(array.size() + 1);
 	RandomDataFill(array[array.size() - 1]);
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
@@ -141,18 +145,21 @@ void TestVectors() {
 	std::cout << std::endl;
 
 	/* insert a new item into a random location and print */
+	std::cout << "element randomly inserted" << std::endl;
 	array.insert(array.begin() + (rand() % (array.begin() - array.end() - 1)), Data);
 	for (i = 0; i < array.size(); i++) // should now print 7 elements again
 		PrintData(array[i]);
 	std::cout << std::endl;
 
 	/* delete an item at a random location */
+	std::cout << "random element deleted" << std::endl;
 	array.erase(array.begin() + (rand() % (array.size() - 1)));
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
 		PrintData(array[i]);
 	std::cout << std::endl;
 
 	/* delete 2 items at a random location */
+	std::cout << "two sequential elements from a random position deleted" << std::endl;
 	i = rand() % (array.size() - 1);
 	array.erase(array.begin() + i, array.begin() + i + 2);
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
@@ -160,37 +167,43 @@ void TestVectors() {
 	std::cout << std::endl;
 
 	/* time to sort the vector in ascending order of i values (uses operator < override */
+	std::cout << "sort ascending by i field" << std::endl;	
 	std::sort(array.begin(), array.end());
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
 		PrintData(array[i]);
 	std::cout << std::endl;
 
 	/* sort the vector in descending order of i values (uses operator < override */
-	std::sort(array.rbegin(), array.rend());
+	std::cout << "sort descending by i field" << std::endl;
+	std::sort(array.rbegin(), array.rend()); 
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
 		PrintData(array[i]);
 	std::cout << std::endl;
 
 	/* to sort on the d or s fields we have to use a comparison function for those fields 
 	* first sort on d */
+	std::cout << "sort ascending by d field" << std::endl;
 	std::sort(array.begin(), array.end(), DataSortd);
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
 		PrintData(array[i]);
-	std::cout << std::endl;
+	std::cout << std::endl;	
 
 	/* sort the vector in descending order of d */
+	std::cout << "sort descending by d field" << std::endl;
 	std::sort(array.rbegin(), array.rend(), DataSortd);
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
 		PrintData(array[i]);
 	std::cout << std::endl;
 
-	/* sort on the s fields  */
+	/* sort ascemdomg on the s fields  */
+	std::cout << "sort ascending by s field" << std::endl;
 	std::sort(array.begin(), array.end(), DataSorts);
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
 		PrintData(array[i]);
 	std::cout << std::endl;
 
 	/* sort the vector in descending order of s */
+	std::cout << "sort descending by s field" << std::endl;
 	std::sort(array.rbegin(), array.rend(), DataSorts);
 	for (i = 0; i < array.size(); i++) // should now print 6 elements again
 		PrintData(array[i]);
