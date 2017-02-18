@@ -42,6 +42,7 @@
 #include <list>
 #include <string>
 #include <algorithm>
+#include <iomanip>
 
 //using namespace std;
 
@@ -84,7 +85,7 @@ void RandomDataFill(Data &Data) {
 	char Buffer[20];
 
 	Data.i = rand() % 100; // keep numbers to reasonable size.
-	Data.d = (rand() % 100) + 1 / ((rand() % 100) + 1); // keep numbers to reasonable size.
+	Data.d = (rand() % 100) + 1 / ((rand() % 10) + .1); // keep numbers to reasonable size.
 	/* create a random null terminated string of various sizes */
 	j = rand() % (MAX_S_SIZE + 1);
 	if(j < MIN_S_SIZE) 
@@ -339,7 +340,7 @@ void TestDblLinkList() {
 int main()
 {
 	srand((unsigned int)time(NULL)); // seed the random number generator
-
+	std::cout << std::fixed << std::setprecision(2); // set precision to only output to two decimal places
 	TestVectors();
 	TestDblLinkList();
     return 0;
