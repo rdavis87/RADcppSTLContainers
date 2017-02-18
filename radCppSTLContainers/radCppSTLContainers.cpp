@@ -6,14 +6,6 @@
 *
 * File Name: radCppSTLContainers.cpp
 *
-* RandomDataFill                    - Function to fill in a Data structure with random data.
-* PrintElement                      - Function to output to screen the data in a Data structure.
-* Note: PrintData are overloaded functions.
-* PrintData                         - Function to output to screen the entire list of data.
-* PrintData                         - Function to output to screen the entire vector of data. 
-* TestVectors                       - Function to test the use of vector template
-* TestDblLinkList                   - Function to test the use of doubly linked list template
-*
 * DESCRIPTION: This file contains code to to create and use STL container classes
 *
 * Copyright (C) <2017> <Robert A. Davis>
@@ -25,6 +17,13 @@
 * FUNCTIONS/ACTIONS IN
 * THIS FILE:
 *
+* RandomDataFill                    - Function to fill in a Data structure with random data.
+* PrintElement                      - Function to output to screen the data in a Data structure.
+* Note: PrintData are overloaded functions.
+* PrintData                         - Function to output to screen the entire list of data.
+* PrintData                         - Function to output to screen the entire vector of data.
+* TestVectors                       - Function to test the use of vector template
+* TestDblLinkList                   - Function to test the use of doubly linked list template
 *
 * CHANGE LOG:
 *
